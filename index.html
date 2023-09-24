@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let menu=prompt("wybierz opcje\n 1- kalkulator\n 2-gra losowanie\n 3-losowanie\n 4-yt\n 5-srednia");
+
+        if(menu==""){
+            alert('nie wybrano opcji');
+            location.reload();
+        }
+        else if (isNaN(menu)){
+            alert("mozesz podac tylko cyrfy");
+            location.reload();
+        }
+
+        if(menu=="0" || menu>"5"){
+                alert("Nie ma takiej opcji ");
+                location.reload();
+            }
+        if(menu=="1"){
+            let kalkulator=prompt("wybierz opcje\n 1-dodawanie\n 2- odejmnowanie\n 3- mnozenie\n 4-dzielenie");
+            if(kalkulator=="0" || kalkulator>"4"){
+                alert("Nie ma takiej opcji ");
+                location.reload();
+            }
+            let a=prompt("podaj 1 cyfre");
+            let b=prompt("podaj 2 cyfre ");
+            kalkulator=parseInt(kalkulator);
+
+            if(kalkulator=='' || a=='' || b==''){
+                alert("nie uzupełniłeś wszystkich pol")
+                location.reload();
+            }
+            else if(isNaN(kalkulator) || isNaN(a) || isNaN(b)){
+                alert("możesz wpisać tylko cyfry");
+            }
+            if(kalkulator=="1"){
+
+            a=parseFloat(a);
+            b=parseFloat(b);
+
+            d=a+b
+            document.write("<h1>twoj wynik z dodawania to "+d+ "<h1>");
+            
+            
+            }
+            if(kalkulator=="2"){
+
+            
+            a=parseFloat(a);
+            b=parseFloat(b);
+
+            o=a-b
+            document.write("<h1>twoj wynik z odejmowania to "+o+ "</h1>");
+            }
+            if(kalkulator=="3"){
+
+            
+            a=parseFloat(a);
+            b=parseFloat(b);
+
+            m=a*b
+            document.write("twoj wynik z odejmowania to "+m+ "");
+            }     
+            if(kalkulator=="4"){
+
+            
+            a=parseFloat(a);
+            b=parseFloat(b);
+
+            dz=a/b
+            document.write("twoj wynik z odejmowania to "+dz+ "");
+            }
+
+
+        }
+        if(menu=="2"){
+            moneta=Math.random()*2;
+
+            if(moneta<1){
+                document.write("<h3>Reszka</h3>");
+                document.write("<img src='reszka.png'/>");
+            }
+            else{
+                document.write("<h3>Orzeł</h3>");
+                document.write("<img src='orzel.png'>");
+            }
+
+
+            }
+
+
+
+            if(menu=="3"){
+            let ilosc=prompt("do ilu ma byc losowanie");
+
+            if(ilosc==''){
+                alert("Musisz podać jakaś cyfre!");
+                location.reload();
+            }
+            else if (isNaN(ilosc)){
+                alert("mozesz podać tylko cyfry!");
+                location.reload();
+            }
+
+            ilosc=parseFloat(ilosc);
+
+
+            a=ilosc
+
+            a=(Math.floor(Math.random()*a+1));
+            document.write('Twoja wylosowana cyfra to: '+a+'');
+
+            }
+
+
+            if(menu=="4"){
+            
+            let chcesz=prompt("czy chcesz otw yt? tak/nie");
+
+            if(chcesz==="tak"){
+                alert("za chwile otw ci sie yt!");
+                window.open("https://www.youtube.com");
+            }
+            else if(chcesz==="nie"){
+                alert("Nie otwieram yt ! po kliknieciu 'ok' Przejdziesz do strony glownej!");
+
+                location.reload();
+            }
+
+            }
+
+            if(menu=="5"){
+                let mat=prompt("podaj ocene z matmy");
+                let pl=prompt("podaj ocene z pl");
+                let angl=prompt("podaj ocene z angl");
+                let wf=prompt("podaj ocene z wf");
+
+                if(mat=='' || pl=='' || angl=='' || wf==''){
+                    alert("nie podałeś jednego wspolczynnika!");
+                    location.reload();
+                }
+
+                else if(isNaN(mat) || isNaN(pl) || isNaN(angl) || isNaN(wf)){
+                    alert("oceny mozesz podawać tylko cyframi a nie literami !");
+                    location.reload();
+                }
+
+                if(mat<="0" || mat>"6" || pl<="0" || pl>"6" || angl<="0" || angl>"6" || wf<="0" || wf>"6"){
+                    alert("ocena nie mozliwa do uzyskania !");
+                    location.reload();
+                }
+
+                m=mat
+                p=pl
+                a=angl
+                w=wf
+
+                m=parseFloat(m);
+                p=parseFloat(p);
+                a=parseFloat(a);
+                w=parseFloat(w);
+
+                sr=(m+p+a+w)/4
+
+                document.write("twoja srednia to "+sr+"");
+
+            }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
